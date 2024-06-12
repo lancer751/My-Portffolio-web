@@ -1,0 +1,60 @@
+---
+import CodeIcon from '../icons/CodeIcon.astro'
+
+---
+
+
+<section class="w-full" id="projects">
+    <h2 class="flex items-center  text-3xl font-semibold gap-x-8 text-indigo-700 dark:text-sky-500  mb-6 xl:mb-8 ">
+        <CodeIcon class="size-10" />
+        Proyectos
+    </h2>
+    <div class="flex flex-col gap-y-26">
+        <article class="group flex flex-col xl:flex-row justify-between">
+            <div class="w-full xl:w-1/2 xl:order-1">
+                <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1.5 md:group-hover:shadow-lg lg:border lg:border-sky-400 lg:hover:border-white lg:hover:bg-indigo-800/50">
+                    <img src="/project.jpg" alt="my-proyect" loading="lazy" class="object-cover object-top w-full h-56 transition duration-500 sm:h-72 md:h-80 scale-110 group-hover:scale-105">
+                </div>
+            </div>
+
+            <div class="w-full xl:w-1/2 mt-4 xl:mt-0">
+                <h3 class="text-2xl font-normal text-sky-400 dark:text-slate-100">Proyect name</h3>
+                <div class="space-y-2 mt-2">
+                    <ul class="flex flex-row mb-2 gap-x-2"> 
+                        <li> 
+                            <span class="flex gap-x-2 rounded-full text-xs bg-black text-white py-1 px-2 "> 
+                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="256" height="256" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256"> <defs> <linearGradient id="c" x1="55.633%" x2="83.228%" y1="56.385%" y2="96.08%"> <stop offset="0%" stop-color="#FFF"></stop> <stop offset="100%" stop-color="#FFF" stop-opacity="0"></stop> </linearGradient> <linearGradient id="d" x1="50%" x2="49.953%" y1="0%" y2="73.438%"> <stop offset="0%" stop-color="#FFF"></stop> <stop offset="100%" stop-color="#FFF" stop-opacity="0"></stop> </linearGradient> <circle id="a" cx="128" cy="128" r="128"></circle> </defs> <mask id="b" fill="#fff"> <use xlink:href="#a"></use> </mask> <g mask="url(#b)"> <circle cx="128" cy="128" r="128"></circle> <path fill="url(#c)" d="M212.634 224.028 98.335 76.8H76.8v102.357h17.228V98.68L199.11 234.446a128.433 128.433 0 0 0 13.524-10.418Z"></path> <path fill="url(#d)" d="M163.556 76.8h17.067v102.4h-17.067z"></path> </g> 
+                                </svg> Next.js
+                            </span> 
+                        </li>
+                        
+                        <li> 
+                            <span class="flex gap-x-2 rounded-full text-xs bg-[#003159] text-white py-1 px-2 "> 
+                                <svg class="size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#a)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"></path></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h54v32.4H0z"></path></clipPath></defs>
+                                </svg> Tailwind CSS 
+                            </span> 
+                        </li> 
+                    </ul>
+
+                    <p class="text-normal font-normal text-blue-800/80 dark:text-slate-100 leading-7 text-pretty">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sed, placeat magnam dicta expedita deserunt non tempore consectetur aspernatur provident laudantium exercitationem, nesciunt nihil blanditiis veritatis sit a qui, pariatur inventore error ipsam. Molestiae eos consequatur placeat. Libero, officia odit?
+                    </p>
+                    <div class="flex items-center gap-x-3">
+                        <a href="#" class="p-1.5 text-white text-sm font-normal gap-x-2 px-6 py-2 rounded-full bg-black flex items-center justify-center hover:scale-[1.05] transition-transform"
+                            >
+                            <svg  xmlns="http://www.w3.org/2000/svg"  class="w-8 h-8 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+
+                            Ver Código
+                        </a>
+
+                        <a href="#" class="inline-flex items-center justify-center h-max bg-cyan-500 shadow-lg transition-colors hover:bg-sky-400 hover:shadow-sky-400/50 shadow-cyan-500/50 px-8 py-2 gap-x-2 rounded-lg font-normal">
+                            <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                            Preview
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>

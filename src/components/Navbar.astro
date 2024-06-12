@@ -1,0 +1,75 @@
+---
+import MenuHambuger from "../icons/MenuHambuger.astro";
+import DarkModeSwitcher from "./DarkModeSwitcher.astro"
+
+---
+
+<header class="py-6 w-[90%] max-w-xl xl:max-w-[880px] mx-auto">
+    
+    <nav class="flex justify-between text-white pt-5">
+        
+        <div class="relative">
+            <button id="btnMenu" class="md:hidden">
+                <MenuHambuger class="text-gray-800 dark:text-white"/>
+            </button>
+            <div class="font-medium absolute hidden top-8 left-0 text-gray-800 dark:text-white bg-white dark:bg-gray-800 min-w-[9rem] p-2 rounded-md overflow-hidden text-left backdrop-blur-md dark:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                <ul class="">
+                    <li class="px-2 py-1.5">
+                        <a href="/#sobreMi" class="">Sobre mí</a>
+                    </li>
+                    <li class="px-2 py-1.5">
+                        <a href="/#skills" class="">Habilidades</a>
+                    </li class="px-2">
+                    <li class="px-2 py-1.5">
+                        <a href="/#projects" class="">Proyectos</a>
+                    </li>
+                    <li class="px-2 py-1.5">
+                        <a href="mailto:pachecolau27@gmail.com" class="">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="hidden md:flex gap-3 font-medium text-gray-800 dark:text-slate-100">
+                <li class="px-2 py-1.5">
+                    <a href="/#sobreMi" class="hover:text-sky-400 dark:hover:text-sky-200 transition-colors duration-200 ease-out">Sobre mí</a>
+                </li>
+                <li class="px-2 py-1.5">
+                    <a href="/#skills" class="hover:text-sky-400 dark:hover:text-sky-200 transition-colors duration-200 ease-out">Habilidades</a>
+                </li class="px-2">
+                <li class="px-2 py-1.5">
+                    <a href="/#projects" class="hover:text-sky-400 dark:hover:text-sky-200 transition-colors duration-200 ease-out">Proyectos</a>
+                </li>
+                <li class="px-2 py-1.5">
+                    <a href="mailto:pachecolau27@gmail.com" class="hover:text-sky-400 dark:hover:text-sky-200 transition-colors duration-200 ease-out">Contacto</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex gap-2 items-center justify-center group" id="switcherTheme">
+            <DarkModeSwitcher class= "cursor-pointer w-5 h-5 sm:w-5 sm:h-5 text-gray-800 dark:fill-white dark:text-white group-hover:scale-105"/>
+            <span class="font-semibold text-sm sm:text-lg text-gray-800 dark:text-white">Dark Mode</span>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const switchTheme = document.querySelector('#switcher');
+    const HTMLTag = document.documentElement;
+    const storageThemeValue = localStorage.getItem('theme');
+    const systemColorScheme = window.matchMedia(('prefers-color-scheme: dark)')).matches ? 'dark' : 'light';
+    let savedTheme = storageThemeValue?? systemColorScheme;
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+        savedTheme === 'dark' ? HTMLTag.setAttribute('data-theme', 'dark'): true;
+
+        switchTheme?.addEventListener('click', ()=>{
+            let changeToTheme = HTMLTag.getAttribute('data-theme') === 'dark' ? 'light': 'dark';
+            HTMLTag.setAttribute('data-theme', changeToTheme);
+             
+            localStorage.setItem('theme', changeToTheme);
+
+        })
+
+    })
+
+</script>

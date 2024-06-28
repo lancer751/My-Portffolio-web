@@ -12,6 +12,7 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
             <button id="btnMenu" class="md:hidden">
                 <MenuHambuger class="text-gray-800 dark:text-white"/>
             </button>
+
             <div class="font-medium absolute hidden top-8 left-0 text-gray-800 dark:text-white bg-white dark:bg-gray-800 min-w-[9rem] p-2 rounded-md overflow-hidden text-left backdrop-blur-md dark:shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                 <ul class="">
                     <li class="px-2 py-1.5">
@@ -29,7 +30,7 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
                 </ul>
             </div>
 
-            <ul class="hidden md:flex gap-3 font-medium text-gray-800 dark:text-slate-100">
+            <ul class="hidden absolute top-10 left-0 p-3 bg-white dark:bg-blue-950/90 z-40 rounded-lg shadow-lg md:flex gap-3 font-medium text-gray-800 dark:text-slate-100" id="menuOptions">
                 <li class="px-2 py-1.5">
                     <a href="/#sobreMi" class="hover:text-sky-400 dark:hover:text-sky-200 transition-colors duration-200 ease-out">Sobre mí</a>
                 </li>
@@ -70,6 +71,19 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
 
         })
 
+    })
+
+    //navbar menu mobile
+    const toogleButton = document.querySelector('#btnMenu')
+    const menuOptions = document.querySelector('#menuOptions')
+
+    document.addEventListener('click', ()=> {
+        toogleButton?.addEventListener('click', e=> {
+            e.preventDefault()
+            menuOptions?.classList.toggle('hidden')
+        })
+
+        menuOptions?.classList.toggle('hidden')
     })
 
 </script>

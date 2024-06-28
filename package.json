@@ -17,7 +17,7 @@
     "@fontsource-variable/syne": "^5.0.20",
     "@fontsource/ubuntu": "^5.0.13",
     "@midudev/tailwind-animations": "^0.0.7",
-    "astro": "^4.10.1",
+    "astro": "^4.11.3",
     "tailwind": "^4.0.0",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"

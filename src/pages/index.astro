@@ -1,18 +1,259 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Principal from '../sections/Principal.astro';
-import Skills from '../sections/Skills.astro';
-import Proyects from '../sections/Proyects.astro';
-import SobreMi from '../sections/SobreMi.astro';
+import GithubIcon from '../icons/GithubIcon.astro';
+import CodeIcon from '../icons/CodeIcon.astro';
+import ReactIcon from '../icons/ReactIcon.astro';
+import FingerRight from '../icons/FingerRight.astro';
+import PaleteIcon from '../icons/PaleteIcon.astro';
+import PreviewIcon from '../icons/PreviewIcon.astro';
+import LinkdeInIcon from '../icons/LinkdeInIcon.astro';
 ---
 
 <Layout title="Portofolio de Lau Wong Developer">
-	<Principal/>
-	<div class="py-10 max-w-xl xl:max-w-full space-y-16 mx-auto">
-		<Skills/>
-		<Proyects/>
-		<SobreMi/>
-		
-	</div>
-	
+	<section class="w-full py-14">
+		<div class="max-w-3xl mx-auto">
+			<!-- content for main text -->
+			<div class="space-y-5">
+				<h2 class="text-center text-twilight-navy font-extrabold text-[32px] sm:text-4xl  md:text-5xl leading-10 md:leading-tight">Hola, soy Lau Wong <strong class="text-horizon-blue">Desarrollador Web</strong></h2>
+				<p class="text-center text-midnight-eclipse max-w-xl mx-auto sm:text-lg">
+					Desarrollo tiendas online, páginas y sitios web con el mejor perfomance. Contáctamos y hagamos algo increíble juntos
+				</p>
+
+				<div class="flex items-center justify-center gap-5 flew-wrap">
+					<a href="https://github.com/lancer751" target="_blank" class="w-10 h-10 bg-horizon-blue hover:bg-celestial-azure flex justify-center items-center rounded-full p-2 transition-colors duration-300">
+						<GithubIcon/>
+					</a>
+					
+					<a href="https://www.linkedin.com/in/lau-wong-chang-pacheco-cupe-229ba4260/" target="_blank" class="w-10 h-10 bg-horizon-blue hover:bg-celestial-azure flex justify-center items-center rounded-full p-2 transition-colors duration-300">
+						<LinkdeInIcon class="text-white"/>
+					</a>
+				</div>
+
+				<div class="mt-8 flex justify-center items-center gap-3 flex-wrap">
+					<a href="#contacto" class="text-center w-full max-w-44 px-8 py-3 bg-blue-950 text-cloud-white hover:bg-blue-900 rounded-md transition-colors duration-300 inline-block">Contratar</a>
+					<a href="/docs/CV-Lau-Wong-Pacheco-Cupe.pdf" target="_blank" class="text-center w-full max-w-44 px-8 py-3 border border-blue-950 text-blue-950 hover:bg-cloud-white rounded-md transition-colors duration-300 inline-block">Descargar CV</a>
+				</div>
+			</div>
+
+			<div class="mx-auto mt-10 w-full max-w-2xl  h-72 sm:h-96">
+				<img src="/public/my-desk.jpg" class="w-full h-full object-cover" alt="my-set-up">
+			</div>
+		</div>
+	</section>
+
+	<section class="w-full py-14" id="sobreMi">
+		<div>
+			<div class="space-y-1.5">
+				<span class="uppercase text-xs text-cyber-steel font-semibold">Introducción</span>
+				<h2 class="text-3xl font-extrabold text-twilight-navy">Sobre Mí</h2>
+				<p class="text-midnight-eclipse max-w-2xl">
+					Soy un <strong class="text-celestial-azure">desarrollador web</strong> autodidacta con experiencia en <strong class="text-celestial-azure">JavaScript, TypeScript y especializado en React</strong>. Me apasiona crear interfaces de usuario eficientes y atractivas. Tengo un ojo especial para los detalles y una capacidad para codificar enfoques, asegurando proyectos bien estructurados y con resultados óptimos.
+				</p>
+			</div>
+			<div class="flex justify-center flex-col md:flex-row items-center gap-8 mt-8">
+				<div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+						<CodeIcon class="text-blue-950 w-10 h-10"/>
+					<p class="text-midnight-eclipse font-bold text-normal">Desarrollador Web</p>
+					<span class="text-sm line-clamp-1 text-cyber-steel">HTML, CSS, JS, React, TypeScript</span>
+				</div>
+				<div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+					<ReactIcon class="text-blue-950 w-10 h-10"/>
+					<p class="text-midnight-eclipse font-bold text-normal">Desarrollador React</p>
+					<span class="text-sm line-clamp-1 text-cyber-steel">React JS, Next JS, Node JS</span>
+				</div>
+
+				<div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+					<PaleteIcon class="text-blue-950 w-10 h-10"/>
+				<p class="text-midnight-eclipse font-bold text-normal">UX Design</p>
+				<span class="text-sm line-clamp-1 text-cyber-steel">Figma, Photoshop</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="w-full py-14" id="experiencia">
+		<div class="space-y-1.5">
+			<span class="uppercase text-xs text-cyber-steel font-semibold">Trayectoría</span>
+			<h2 class="text-3xl font-extrabold text-twilight-navy">Experiencia Laboral</h2>
+			<p class="text-midnight-eclipse max-w-2xl">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Et minus odio ad? Natus harum voluptatum, sed error quibusdam cumque ipsum.
+			</p>
+		</div>
+		<div class="relative mt-8">
+			<!-- linea vertical central -->
+			 <div class="absolute left-4 sm:left-1/2 h-full w-0.5 bg-cyber-steel transform -translate-x-1/2"></div>
+			 <div class="space-y-12">
+				<!-- cards for linetime -->
+				<div class="relative">
+					<!-- punto en la linea de tiempo -->
+					<div class="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-horizon-blue rounded-full border-4 border-cloud-white"></div>
+
+					 <!-- contenido -->
+					<div class="ml-12 sm:ml-0 sm:pr-12 sm:text-right sm:w-1/2">
+						<div class="bg-white p-6 rounded-lg shadow-lg">
+							<div class="mb-4">
+								<h4 class="text-xl font-bold text-twilight-navy">Desarrollador Frontend</h4>
+								<p class="text-gray-600 mt-1">2025 (Enero - Mayo)</p>
+							</div>
+							  
+							<div>
+							  <ul class="space-y-2">
+								  <li class="flex items-start sm:flex-row-reverse gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Optimización de rendimiento web</span>
+								  </li>
+								  <li class="flex items-start sm:flex-row-reverse gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Mantenimiento de aplicaciones web</span>
+								  </li>
+								  <li class="flex items-start sm:flex-row-reverse gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Desarrollo de componentes reutilizables</span>
+								  </li>
+							  </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="relative">
+					<!-- punto en la linea de tiempo -->
+					<div class="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-horizon-blue rounded-full border-4 border-cloud-white"></div>
+
+					 <!-- contenido -->
+					<div class="ml-12 sm:mr-0 sm:pl-12 sm:w-1/2 sm:ml-auto">
+						<div class="bg-white p-6 rounded-lg shadow-lg">
+							<div class="mb-4">
+								<h4 class="text-xl font-bold text-twilight-navy">Desarrollador Frontend</h4>
+								<p class="text-gray-600 mt-1">2024 - 2025</p>
+							  </div>
+							  
+							  <ul class="space-y-2">
+								  <li class="flex items-start gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Creación de temas personalizados</span>
+								  </li>
+								  <li class="flex items-start gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Desarrollo desde cero con PHP, HTML, CSS y JavaScript</span>
+								  </li>
+								  <li class="flex items-start gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Desarrollo de componentes reutilizables</span>
+								  </li>
+								  <li class="flex items-start gap-2 text-midnight-eclipse">
+									<span class="flex-shrink-0 w-1.5 h-1.5 mt-2 bg-celestial-azure"></span>
+									<span class="text-cyber-steel">Desarrollo de plugins personalizados</span>
+								  </li>
+							  </ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			 </div>
+		</div>
+	</section>
+
+	<section class="w-full py-14" id="proyectos">
+		<div>
+			<div class="space-y-1.5">
+				<span class="uppercase text-xs text-cyber-steel font-semibold">Mis trabajos</span>
+				<h2 class="text-3xl font-extrabold text-twilight-navy">Proyectos</h2>
+				<p class="text-midnight-eclipse max-w-2xl">
+					A lo largo de mi carrera, he desarrollado diversos proyectos utilizando tecnologías como <strong class="text-celestial-azure">WordPress, React, Node.js, entre otros.</strong>. Cada proyecto refleja mi enfoque en la eficiencia, el rendimiento y una experiencia de usuario excepcional.
+				</p>
+			</div>
+
+			<div class="grid gap-5 justify-center items-center grid-rows-[repeat(autofit,_minmax(200px,1fr))] mt-10">
+				<!-- project cards -->
+				<div class="w-full bg-slate-50 max-w-md shadow-xl p-3 rounded-md group">
+					<div class="relative w-full h-56 md:h-72 rounded-md overflow-hidden group/overlay">
+						<img src="/images/project-1.webp" class="w-full h-full aspect-video object-cover object-left transform transition-transform duration-300 group-hover:scale-110" alt="proyect-1">
+						<div class="absolute opacity-0 bg-black/20 inset-0 group-hover/overlay:opacity-100 z-10 transition duration-300">
+							<div class="p-3 ml-auto flex gap-2 absolute top-0 right-0">
+								<a href="#" class="bg-red-400 w-10 hover:bg-red-500 h-10 inline-flex items-center justify-center p-3 rounded-full transition-colors duration-300">
+									<PreviewIcon class="w-7 h-7 text-white"/>
+								</a>
+								<a href="#" class="bg-black hover:bg-gray-800 w-10 h-10 inline-flex items-center justify-center p-3 rounded-full transition-colors duration-300">
+									<GithubIcon class="w-7 h-7 text-white"/>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4">
+						<p class="text-twilight-navy text-xl md:text-2xl font-bold">Near App</p>
+						<p class="text-midnight-eclipse text-sm">
+							Es una aplicación web similar a una red social, solo que en esta puedes publicar blogs y recibir comentarios de diferentes usuarios.
+						</p>
+						<div class="flex gap-2 mt-3">
+							<span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-orange-500">Astro JS</span>
+							<span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-sky-500">Typescript</span>
+							<span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-red-500">Ruby on Rails</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mx-auto flex mt-10 w-full">
+				<a href="#" class="inline-flex gap-2 rounded-md text-white hover:bg-blue-950 transition-colors duration-300 mx-auto px-8 py-3 bg-horizon-blue">
+					Ver Todos
+					<FingerRight/>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="w-full py-14" id="contacto">
+		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+			<div>
+				<div class="space-y-1.5">
+					<span class="uppercase text-xs text-cyber-steel font-semibold">DESCUBRE</span>
+					<h2 class="text-3xl font-extrabold text-twilight-navy">Contacto</h2>
+					<p class="text-midnight-eclipse max-w-2xl">
+						Tienes un proyecto en mente? Póngamonos en contacto!
+					</p>
+				</div>
+				<form class="space-y-4 sm:space-y-6 mt-10 max-w-md mx-auto lg:mx-0">
+					<div>
+						<label for="name" class="block text-sm font-medium text-midnight-eclipse">Nombre</label>
+						<input
+						type="text"
+						id="name"
+						name="name"
+						class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure  shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
+						/>
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+						<input
+						type="email"
+						id="email"
+						name="email"
+						class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
+						/>
+					</div>
+					<div>
+						<label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+						<textarea
+						id="message"
+						name="message"
+						rows="4"
+						class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2 resize-none"
+						></textarea>
+					</div>
+					<button
+						type="submit"
+						class="w-full bg-horizon-blue text-white px-6 py-3 rounded-lg hover:bg-celestial-azure transition-colors duration-200"
+					>
+						Enviar
+					</button>
+				</form>
+			</div>
+			<div class="hidden lg:flex max-w-md h-[550px] items-center justify-center rounded-lg overflow-hidden shadow-xl transition-transform animate-vertical-floating drop-shadow-xl" >
+				<img src="/me-profile.jpg" class=" object-cover w-full h-full" alt="me">
+			</div>
+		</div>
+	</section>
+
 </Layout>

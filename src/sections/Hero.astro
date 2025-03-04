@@ -1,0 +1,37 @@
+---
+import GithubIcon from "../icons/GithubIcon.astro";
+import LinkdeInIcon from "../icons/LinkdeInIcon.astro";
+
+
+---
+
+<section class="w-full py-14">
+    <div class="max-w-3xl mx-auto">
+        <!-- content for main text -->
+        <div class="space-y-5">
+            <h2 class="text-center text-twilight-navy font-extrabold text-[32px] sm:text-4xl  md:text-5xl leading-10 md:leading-tight">Hola, soy Lau Wong <strong class="text-horizon-blue">Desarrollador Web</strong></h2>
+            <p class="text-center text-midnight-eclipse max-w-xl mx-auto sm:text-lg">
+                Desarrollo tiendas online, páginas y sitios web con el mejor perfomance. Contáctamos y hagamos algo increíble juntos
+            </p>
+
+            <div class="flex items-center justify-center gap-5 flew-wrap">
+                <a href="https://github.com/lancer751" target="_blank" class="w-10 h-10 bg-horizon-blue hover:bg-celestial-azure flex justify-center items-center rounded-full p-2 transition-colors duration-300">
+                    <GithubIcon/>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/lau-wong-chang-pacheco-cupe-229ba4260/" target="_blank" class="w-10 h-10 bg-horizon-blue hover:bg-celestial-azure flex justify-center items-center rounded-full p-2 transition-colors duration-300">
+                    <LinkdeInIcon class="text-white"/>
+                </a>
+            </div>
+
+            <div class="mt-8 flex justify-center items-center gap-3 flex-wrap">
+                <a href="#contacto" class="text-center w-full max-w-44 px-8 py-3 bg-blue-950 text-cloud-white hover:bg-blue-900 rounded-md transition-colors duration-300 inline-block">Contratar</a>
+                <a href="/docs/CV-Lau-Wong-Pacheco-Cupe.pdf" target="_blank" class="text-center w-full max-w-44 px-8 py-3 border border-blue-950 text-blue-950 hover:bg-cloud-white rounded-md transition-colors duration-300 inline-block">Descargar CV</a>
+            </div>
+        </div>
+
+        <div class="mx-auto mt-10 w-full max-w-2xl  h-72 sm:h-96">
+            <img src="/public/my-desk.jpg" class="w-full h-full object-cover" alt="my-set-up">
+        </div>
+    </div>
+</section>

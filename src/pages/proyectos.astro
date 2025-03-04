@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { FilterProjects } from "../components/FilterProjects";
+
+---
+<Layout title="Proyectos - Lau Wong Coder">
+    <section class="py-14 w-full">
+        <div class="space-y-5">
+            <h2 class="text-3xl md:text-5xl text-center font-extrabold text-twilight-navy">Mis Proyectos</h2>
+            <p class="text-midnight-eclipse text-center mx-auto max-w-2xl">
+                A lo largo de mi carrera, he desarrollado diversos proyectos utilizando tecnologías como <strong class="text-celestial-azure">WordPress, React, Node.js, entre otros.</strong>. Cada proyecto refleja mi enfoque en la eficiencia, el rendimiento y una experiencia de usuario excepcional.
+            </p>
+        </div>
+        <FilterProjects client:visible/>
+    </section>
+</Layout>

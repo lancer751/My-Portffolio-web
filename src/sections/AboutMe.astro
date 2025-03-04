@@ -1,0 +1,37 @@
+---
+import CodeIcon from "../icons/CodeIcon.astro";
+import PaleteIcon from "../icons/PaleteIcon.astro";
+import ReactIcon from "../icons/ReactIcon.astro";
+
+
+---
+
+<section class="w-full py-14" id="sobreMi">
+    <div>
+        <div class="space-y-1.5">
+            <span class="uppercase text-xs text-cyber-steel font-semibold">Introducción</span>
+            <h2 class="text-3xl font-extrabold text-twilight-navy">Sobre Mí</h2>
+            <p class="text-midnight-eclipse max-w-2xl">
+                Soy un <strong class="text-celestial-azure">desarrollador web</strong> autodidacta con experiencia en <strong class="text-celestial-azure">JavaScript, TypeScript y especializado en React</strong>. Me apasiona crear interfaces de usuario eficientes y atractivas. Tengo un ojo especial para los detalles y una capacidad para codificar enfoques, asegurando proyectos bien estructurados y con resultados óptimos.
+            </p>
+        </div>
+        <div class="flex justify-center flex-col md:flex-row items-center gap-8 mt-8">
+            <div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+                    <CodeIcon class="text-blue-950 w-10 h-10"/>
+                <p class="text-midnight-eclipse font-bold text-normal">Desarrollador Web</p>
+                <span class="text-sm line-clamp-1 text-cyber-steel">HTML, CSS, JS, React, TypeScript</span>
+            </div>
+            <div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+                <ReactIcon class="text-blue-950 w-10 h-10"/>
+                <p class="text-midnight-eclipse font-bold text-normal">Desarrollador React</p>
+                <span class="text-sm line-clamp-1 text-cyber-steel">React JS, Next JS, Node JS</span>
+            </div>
+
+            <div class="w-full max-w-sm shadow-md px-5 py-7 bg-slate-100 space-y-2">
+                <PaleteIcon class="text-blue-950 w-10 h-10"/>
+            <p class="text-midnight-eclipse font-bold text-normal">UX Design</p>
+            <span class="text-sm line-clamp-1 text-cyber-steel">Figma, Photoshop</span>
+            </div>
+        </div>
+    </div>
+</section>

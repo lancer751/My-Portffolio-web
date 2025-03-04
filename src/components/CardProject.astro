@@ -1,0 +1,48 @@
+---
+import GithubIcon from "../icons/GithubIcon.astro";
+import PreviewIcon from "../icons/PreviewIcon.astro";
+
+interface Props{
+    id: number,
+    title: string,
+    description: string,
+    imageURL: string,
+    githubURL: string,
+    demoURL: string,
+    tags: string[]
+}
+
+const {id, title, description, imageURL, githubURL, demoURL, tags} = Astro.props
+
+---
+
+<div class="block w-full bg-slate-50 max-w-md shadow-xl p-3 rounded-md group relative">
+    <div class="block relative w-full h-56 rounded-md overflow-hidden group/overlay">
+        <img src={imageURL} class="w-full h-full aspect-video object-cover object-left transform transition-transform duration-300 group-hover:scale-110" alt="proyect-1">
+        <div class="absolute opacity-0 bg-black/20 inset-0 group-hover/overlay:opacity-100 z-10 transition duration-300">
+            <div class="p-3 ml-auto flex gap-2 absolute top-0 right-0">
+                <a href={demoURL} class="bg-red-400 w-10 hover:bg-red-500 h-10 inline-flex items-center justify-center p-3 rounded-full transition-colors duration-300">
+                    <PreviewIcon class="w-7 h-7 text-white"/>
+                </a>
+                <a href={githubURL} class="bg-black hover:bg-gray-800 w-10 h-10 inline-flex items-center justify-center p-3 rounded-full transition-colors duration-300">
+                    <GithubIcon class="w-7 h-7 text-white"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 space-y-2">
+        <p class="text-twilight-navy text-xl md:text-2xl font-bold">{title}</p>
+        <p class="text-midnight-eclipse text-sm">
+            {description}
+        </p>
+        <div class="flex gap-2 mt-3">
+            {
+                tags.map(tag => (
+                    <span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-blue-500">{tag}</span>
+                ))
+            }
+        </div>
+        <a href={`/projects/${id}`} class="inline-block mt-3 capitalize underline text-inherit">Ver Proyecto</a>
+    </div>
+</div>

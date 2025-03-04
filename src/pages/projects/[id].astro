@@ -1,0 +1,50 @@
+---
+import { projects } from "../../data/projects";
+import GithubIcon from "../../icons/GithubIcon.astro";
+import PreviewIcon from "../../icons/PreviewIcon.astro";
+import Layout from "../../layouts/Layout.astro"
+
+export function getStaticPaths(){
+    return projects.map(project => ({
+        params: {id: project.id}
+    }))
+}
+
+const {id} = Astro.params
+const currentProject = projects.find(project => project.id === Number(id))
+const {title, longDescription, image, tags, demoUrl, githubUrl} = currentProject
+console.log(githubUrl)
+---
+
+<Layout title={`${title} - Lau Wong Coder`}>
+    <section class="w-full py-14 max-w-3xl mx-auto">
+        <div class="w-full rounded-xl overflow-hidden h-64 sm:h-80 md:h-96 lg:h-[450px] group">
+            <img src={image} alt={title} class="h-full w-full object-cover object-left-top group-hover:scale-110 transition-transform duration-500">
+        </div>
+
+        <div class="space-y-4 mt-10">
+            <h1 class="text-2xl sm:text-4xl font-extrabold text-twilight-navy">{title}</h1>
+            <div class="flex gap-2">
+                {
+                    tags.map((tag : string[]) => (
+                        <span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-blue-500">{tag}</span>
+                    ))    
+                }
+            </div>
+            <p class="sm:text-lg text-midnight-eclipse">
+                {longDescription}
+            </p>
+
+            <div class="mt-8 flex justify-start items-center gap-3 flex-wrap">
+                <a href={githubUrl} target="_blank" class="inline-flex items-center gap-3 text-center w-full max-w-max px-8 py-3 bg-blue-950 text-cloud-white hover:bg-blue-900 rounded-md transition-colors duration-300">
+                    <GithubIcon class="w-6 h-6"/>
+                    Ver Código
+                </a>
+                <a href={demoUrl} target="_blank" class="inline-flex items-center gap-3 text-center w-full max-w-max px-8 py-3 border border-blue-950 text-blue-950 hover:bg-cloud-white rounded-md transition-colors duration-300">
+                    <PreviewIcon class="w-6 h-6"/>
+                    Ver Demo
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>

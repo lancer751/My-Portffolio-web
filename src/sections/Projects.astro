@@ -1,0 +1,43 @@
+---
+import FingerRight from "../icons/FingerRight.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import PreviewIcon from "../icons/PreviewIcon.astro";
+import { projects } from "../data/projects";
+import CardProject from "../components/CardProject.astro";
+
+---
+<section class="w-full py-14" id="proyectos">
+    <div>
+        <div class="space-y-1.5">
+            <span class="uppercase text-xs text-cyber-steel font-semibold">Mis trabajos</span>
+            <h2 class="text-3xl font-extrabold text-twilight-navy">Proyectos</h2>
+            <p class="text-midnight-eclipse max-w-2xl">
+                A lo largo de mi carrera, he desarrollado diversos proyectos utilizando tecnologías como <strong class="text-celestial-azure">WordPress, React, Node.js, entre otros.</strong>. Cada proyecto refleja mi enfoque en la eficiencia, el rendimiento y una experiencia de usuario excepcional.
+            </p>
+        </div>
+
+        <div class="grid gap-4 justify-center items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10">
+            <!-- project cards -->
+            {
+                projects.map(project => (
+                    <CardProject
+                    id={project.id}
+                    title={project.title}
+                    description={project.description}
+                    imageURL={project.image}
+                    githubURL={project.githubUrl}
+                    demoURL={project.demoUrl}
+                    tags={project.tags}
+                    />
+                ))
+            }
+        </div>
+
+        <div class="mx-auto flex mt-10 w-full">
+            <a href="/proyectos/" class="inline-flex gap-2 rounded-md text-white hover:bg-blue-950 transition-colors duration-300 mx-auto px-8 py-3 bg-horizon-blue">
+                Ver Todos
+                <FingerRight/>
+            </a>
+        </div>
+    </div>
+</section>

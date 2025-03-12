@@ -5,11 +5,11 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
 ---
 
 <header class="w-full relative">
-    <nav class="px-8 h-14 flex items-center text-midnight-eclipse shadow-md fixed top-0 inset-x-0 z-[50] backdrop-blur-lg">
+    <nav class="px-8 h-14 flex items-center bg-white/50 dark:bg-night/50 text-midnight-eclipse shadow-md fixed top-0 inset-x-0 z-[50] backdrop-blur-lg">
         <div class="w-full max-w-screen-lg  mx-auto flex justify-between md:justify-center items-center">
             <div class="relative z-30">
                 <button id="btnMenu" class="md:hidden">
-                    <MenuHambuger class="text-midnight-eclipse"/>
+                    <MenuHambuger class="text-midnight-eclipse dark:text-white"/>
                 </button>
     
                 <!-- menu for mobile -->
@@ -32,7 +32,7 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
                 </div>
     
                 <!-- menu for desktop -->
-                <ul class="hidden md:flex items-center gap-5 font-medium text-midnight-eclipse">
+                <ul class="hidden md:flex items-center gap-5 font-medium text-midnight-eclipse dark:text-white">
                     <li class="">
                         <a href="/#sobreMi" class="hover:text-celestial-azure transition-colors duration-300 ease-out">Sobre mí</a>
                     </li>
@@ -45,14 +45,11 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
                     <li class="">
                         <a href="#contacto" class="hover:text-celestial-azure transition-colors duration-300 ease-out">Contacto</a>
                     </li>
-                    <li>
-                        <DarkModeSwitcher class= "cursor-pointer w-5 h-5 sm:w-5 sm:h-5 text-gray-800 dark:fill-white dark:text-white group-hover:scale-105"/>
-                    </li>
                 </ul>
             </div>
     
-            <div class="flex gap-2 md:hidden items-center justify-center group" id="switcherTheme">
-                <DarkModeSwitcher class= "cursor-pointer w-5 h-5 sm:w-5 sm:h-5 text-gray-800"/>
+            <div class="flex gap-2 ml-6 items-center justify-center group">
+                <DarkModeSwitcher class= "cursor-pointer w-5 h-5 sm:w-5 sm:h-5 text-gray-800 dark:fill-white dark:text-white group-hover:scale-105"/>
             </div>
         </div>
     </nav>
@@ -66,14 +63,10 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
     let savedTheme = storageThemeValue?? systemColorScheme;
 
     document.addEventListener('DOMContentLoaded', ()=>{
-        savedTheme === 'dark' ? HTMLTag.setAttribute('data-theme', 'dark'): true;
-
         switchTheme?.addEventListener('click', ()=>{
             let changeToTheme = HTMLTag.getAttribute('data-theme') === 'dark' ? 'light': 'dark';
             HTMLTag.setAttribute('data-theme', changeToTheme);
-             
             localStorage.setItem('theme', changeToTheme);
-
         })
 
     })
@@ -87,8 +80,8 @@ import DarkModeSwitcher from "./DarkModeSwitcher.astro"
         menuOptions?.classList.toggle('hidden')
     })
 
-    menuOptions.querySelectorAll('ul li a').forEach(option => {
-        option.addEventListener('click', e =>{
+    menuOptions?.querySelectorAll('ul li a').forEach(option => {
+        option.addEventListener('click', () =>{
             menuOptions?.classList.toggle('hidden')
         })
     })

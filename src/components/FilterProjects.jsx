@@ -7,7 +7,6 @@ const projectTypes = ['all', 'personal', 'laboral']
 export function FilterProjects(){
     const [selectedType, setSelectedType] = useState('all')
     const [selectedTags, setSelectedTags] = useState([])
-    console.log(selectedTags)
 
     const filteredProjects = projects.filter(project => {
         const typeMatch = selectedType === 'all' || project.type === selectedType;
@@ -62,20 +61,24 @@ export function FilterProjects(){
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 {filteredProjects.map(project => (
                     <a 
+                        key={project.id}
                         href={`/projects/${project.id}`}
-                        className="block h-full bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                        className="block h-full bg-white dark:bg-blue-950 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
                     >
-                        <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-                        <div className="p-4 sm:p-6">
-                        <h4 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h4>
-                        <p className="text-gray-600 text-sm sm:text-base mb-4">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                            {project.tags.map(tag => (
-                            <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs sm:text-sm">
-                                {tag}
-                            </span>
-                            ))}
+                        <div className='relative h-52 w-full overflow-hidden'>
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 duration-500 transition-transform" />
+                            
                         </div>
+                        <div className="p-4 sm:p-6">
+                            <h4 className="text-twilight-navy text-xl md:text-2xl dark:text-white font-bold">{project.title}</h4>
+                            <p className="text-gray-600 text-sm sm:text-base mb-4 dark:text-slate-100">{project.description}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {project.tags.map(tag => (
+                                <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs sm:text-sm">
+                                    {tag}
+                                </span>
+                                ))}
+                            </div>
                         </div>
                     </a>
                     ))

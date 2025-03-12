@@ -1,43 +1,47 @@
 <section class="w-full py-14" id="contacto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-            <div class="space-y-1.5">
-                <span class="uppercase text-xs text-cyber-steel font-semibold">DESCUBRE</span>
-                <h2 class="text-3xl font-extrabold text-twilight-navy">Contacto</h2>
-                <p class="text-midnight-eclipse max-w-2xl">
+            <div class="space-y-1.5 text-center lg:text-left">
+                <span class="uppercase text-xs text-cyber-steel font-semibold dark:text-gray-500">DESCUBRE</span>
+                <h2 class="text-3xl font-extrabold text-twilight-navy dark:text-white">Contacto</h2>
+                <p class="text-midnight-eclipse max-w-2xl dark:text-slate-100">
                     Tienes un proyecto en mente? Póngamonos en contacto!
                 </p>
             </div>
-            <form class="space-y-4 sm:space-y-6 mt-10 max-w-md mx-auto lg:mx-0">
+            <form id="form-contact" class="space-y-4 sm:space-y-6 mt-10 max-w-md mx-auto lg:mx-0">
                 <div>
-                    <label for="name" class="block text-sm font-medium text-midnight-eclipse">Nombre</label>
+                    <label for="from_name" class="block text-sm font-medium text-midnight-eclipse dark:text-slate-300">Nombre</label>
                     <input
                     type="text"
-                    id="name"
-                    name="name"
-                    class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure  shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
+                    name="from_name" 
+                    id="from_name"
+                    required
+                    class="bg-white dark:bg-slate-900 dark:text-cloud-white mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure  shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
                     />
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <label for="email" class="block text-sm font-medium text-midnight-eclipse dark:text-slate-300">Email</label>
                     <input
                     type="email"
                     id="email"
                     name="email"
-                    class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
+                    required
+                    class="bg-white dark:bg-slate-900 dark:text-cloud-white mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2"
                     />
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                    <label for="message" class="block text-sm font-medium text-midnight-eclipse dark:text-slate-300">Mensaje</label>
                     <textarea
                     id="message"
                     name="message"
                     rows="4"
-                    class="mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2 resize-none"
+                    required
+                    class="bg-white dark:bg-slate-900 dark:text-cloud-white mt-1 block w-full rounded-md outline outline-1 focus:outline-2 outline-celestial-azure shadow-sm focus:border-celestial-azure focus:ring-celestial-azure px-2.5 py-2 resize-none"
                     ></textarea>
                 </div>
                 <button
                     type="submit"
+                    id="btnSend"
                     class="w-full bg-horizon-blue text-white px-6 py-3 rounded-lg hover:bg-celestial-azure transition-colors duration-200"
                 >
                     Enviar
@@ -48,4 +52,54 @@
             <img src="/me-profile.jpg" class=" object-cover w-full h-full" alt="me">
         </div>
     </div>
+
+    <div id="modal" class="hidden fixed inset-0 justify-center items-center bg-black/50 backdrop-blur-sm z-[200]">
+        <div class="flex flex-col justify-center items-center w-[90%] max-w-[400px] dark:bg-night bg-white z-[100] overflow-hidden rounded-xl p-5 py-10 sm:p-10 text-center animate-fade-in-up animate-duration-300">
+            <h3 class="text-midnight-eclipse mb-6 text-3xl font-extrabold sm:text-4xl dark:text-white">Gracias por contactar con <strong class="text-horizon-blue">Lau Wong</strong></h3>
+            <p class="text-9xl">
+                🎊
+            </p>
+            <p class="dark:text-white text-midnight-eclipse mt-10">
+                Se te responderá a la brevedad posible 😃
+            </p>
+        </div>
+    </div>
 </section>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("GsLohOT4IoCpTxWw7");
+   })();
+</script>
+<script type="text/javascript">
+    const btn = document.getElementById('btnSend');
+    const formulario = document.querySelector('#form-contact')
+    const modal = document.querySelector('#modal')
+    document.getElementById('form-contact').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    btn.value = 'Enviando...';
+
+    const serviceID = 'service_ylfuq9b';
+    const templateID = 'template_cecqzkd';
+
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.value = 'Enviar Email';
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            formulario.reset()
+            setTimeout(()=> {
+                modal.classList.add('hidden');
+                modal.classList.remove('animate-fade-in-up');
+                modal.classList.remove('flex');
+            }, 4000)
+        }, (err) => {
+            btn.value = 'Enviar Email';
+            alert(JSON.stringify(err));
+        });
+    });
+</script>

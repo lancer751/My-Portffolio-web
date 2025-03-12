@@ -16,7 +16,7 @@ const {id, title, description, imageURL, githubURL, demoURL, tags} = Astro.props
 
 ---
 
-<div class="block w-full bg-slate-50 max-w-md shadow-xl p-3 rounded-md group relative">
+<div class="block w-full bg-white dark:bg-blue-950 max-w-md shadow-xl p-3 rounded-md group relative">
     <div class="block relative w-full h-56 rounded-md overflow-hidden group/overlay">
         <img src={imageURL} class="w-full h-full aspect-video object-cover object-left transform transition-transform duration-300 group-hover:scale-110" alt="proyect-1">
         <div class="absolute opacity-0 bg-black/20 inset-0 group-hover/overlay:opacity-100 z-10 transition duration-300">
@@ -32,17 +32,17 @@ const {id, title, description, imageURL, githubURL, demoURL, tags} = Astro.props
     </div>
 
     <div class="mt-4 space-y-2">
-        <p class="text-twilight-navy text-xl md:text-2xl font-bold">{title}</p>
-        <p class="text-midnight-eclipse text-sm">
+        <p class="text-twilight-navy text-xl md:text-2xl font-bold dark:text-white">{title}</p>
+        <p class="text-midnight-eclipse text-sm dark:text-slate-100">
             {description}
         </p>
         <div class="flex gap-2 mt-3">
             {
                 tags.map(tag => (
-                    <span class="text-sm rounded-md text-white px-2 py-1 inline-block bg-blue-500">{tag}</span>
+                    <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs sm:text-sm">{tag}</span>
                 ))
             }
         </div>
-        <a href={`/projects/${id}`} class="inline-block mt-3 capitalize underline text-inherit">Ver Proyecto</a>
+        <a href={`/projects/${id}`} class="inline-block mt-3 capitalize text-white px-7 text-sm py-2 bg-blue-500 rounded-md hover:bg-blue-600 transition-colors">Ver Proyecto</a>
     </div>
 </div>

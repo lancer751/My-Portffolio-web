@@ -42,7 +42,8 @@ export default {
 				'cyber-steel': '#4A5568',
 				'neon-violet': '#7C3AED',
 				'cloud-white': '#F7FAFC',
-				'matrix-green': '#48BB78'
+				'matrix-green': '#48BB78',
+				'night': "#010519"
 			}
 		},
 	},
